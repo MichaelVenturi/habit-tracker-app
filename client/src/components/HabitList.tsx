@@ -1,14 +1,13 @@
 import { useContext } from "react";
 import HabitContext from "../state/HabitContext";
+import HabitItem from "./HabitItem";
 
 const HabitList = () => {
   const { habits } = useContext(HabitContext);
   return (
     <div>
       {habits.map((h) => (
-        <div key={h.id}>
-          <p>{h.name}</p>
-        </div>
+        <HabitItem key={h.id} habit={h} />
       ))}
     </div>
   );

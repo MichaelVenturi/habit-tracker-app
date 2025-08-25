@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { dummyHabits } from "../dummyData";
 
-interface IHabit {
+export interface IHabit {
   id: number;
   name: string;
   completed: boolean;
