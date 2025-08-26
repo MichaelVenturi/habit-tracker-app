@@ -4,7 +4,7 @@ const habitSchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
+      //required: true,
       ref: "User",
     },
     habitTitle: {
@@ -30,10 +30,10 @@ const habitSchema = new mongoose.Schema(
 
 export const Habit = mongoose.model("Habit", habitSchema);
 
-export const DailyHabit = Habit.discriminator("daily", new Schema({}));
+export const DailyHabit = Habit.discriminator("daily", new mongoose.Schema({}));
 export const WeeklyHabit = Habit.discriminator(
   "weekly",
-  new Schema({
+  new mongoose.Schema({
     weeklyTarget: {
       type: Number,
       required: [true, "Please enter your weekly target"],
